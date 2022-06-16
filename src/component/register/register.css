@@ -1,0 +1,21 @@
+.register-container {
+    width: 99%;
+    margin: 0 auto;
+}
+
+.title-container{
+    width: 50%;
+    margin: 0 auto;
+}
+
+.input-form {
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   align-content: center;
+}
+
+.text-field {
+    width: 50%;
+}
