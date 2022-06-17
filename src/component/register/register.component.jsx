@@ -1,12 +1,14 @@
-import  React, { useState } from 'react';
+import  React, { useContext, useState } from 'react';
 import gql from 'graphql-tag';
 import { useMutation } from '@apollo/client';
 import TextField from '@mui/material/TextField';
 import "../register/register.css";
 import { useNavigate } from 'react-router-dom';
 import { useForm } from '../../utils/custom-hooks';
+import { AuthContext } from "../context/auth"
 
 const Register = () => {
+  const context = useContext(AuthContext)
   const history = useNavigate(); 
   const [errors, setErrors] = useState({});
   const { handleChange, handleSubmit, values } = useForm(registerUser, {
@@ -18,7 +20,8 @@ const Register = () => {
   const { username, email, password, confirmPassword } = values
  
   const [addUser, { loading }] = useMutation(REGISTER_USER, {
-    update(proxy, result){
+    update(proxy, { data: { register: userData } }){
+      context.login(userData)
       history('/')
     },
     onError(err){
@@ -85,7 +88,7 @@ const Register = () => {
           <button>Register</button>
         </div>
     </form>
-    {Object.keys(errors).length > 0 && (
+    {/* {Object.keys(errors).length > 0 && (
         <div className="">
           <ul className="">
             {Object.values(errors).map((value) => (
@@ -93,7 +96,7 @@ const Register = () => {
             ))}
           </ul>
         </div>
-      )}
+      )} */}
     </>
   );
 }

@@ -1,0 +1,27 @@
+.container {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header {
+    text-decoration: none;
+    color: black;
+}
+
+.bottom {
+    display: flex;
+    justify-content: space-between;
+}
+
+.register {
+    padding-right: 2rem;
+    text-decoration: none;
+    color: black;
+}
+
+.login {
+    text-decoration: none;
+    color: black;
+}
