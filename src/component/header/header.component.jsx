@@ -11,7 +11,7 @@ const Header = () => {
             <div className="bottom">
                 <Link className="register" to="/register">REGISTER</Link>
                 {
-                    user ? <Link className='login' to="">Logout</Link> : <Link className="login" to="/login">LOGIN</Link>
+                    user ? <Link onClick={logout} className='login' to="/login">LOGOUT</Link> : <Link className="login" to="/login">LOGIN</Link>
                 }
             </div>
         </div>
