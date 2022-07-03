@@ -7,7 +7,7 @@ import Typography from '@mui/material/Typography';
 import moment from 'moment';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../context/auth';
-import LikeButton from '../likebutton\'/likebutton.component';
+import LikeButton from '../likebutton/likebutton.component';
 
 const CardComponent = ({ post : { body, id, username, createdAt, likes } }) => {
   const { user } = useContext(AuthContext);

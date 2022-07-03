@@ -16,7 +16,7 @@ function App() {
         <Route  path={'/'} exact={true}  element={<Home />} />
         <Route  path={'/register'} exact={true}  element={<Register />} />
         <Route  path={'/login'} exact={true}  element={<Login />} />
-        <Route exact path={'/posts/:postId'} element={<SinglePost />} />
+        <Route  path={'/posts/:postId'} element={<SinglePost />} />
        </Routes>
       </AuthProvider>
     

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useForm } from "../../utils/custom-hooks";
 import gql from 'graphql-tag';
-import { FETCH_POST_QUERY } from "../../utils/graphql";
+import { FETCH_POSTS_QUERY } from "../../utils/graphql";
 import { useMutation } from '@apollo/client';
 import TextArea from '@mui/material/TextField';
 
@@ -16,10 +16,10 @@ const CreateProduct = () => {
         variables: values,
         update(proxy, result){
             const data = proxy.readQuery({
-                query: FETCH_POST_QUERY
+                query: FETCH_POSTS_QUERY
             })
             data.getPosts = [result.data.createPost, ...data.getPosts]
-            proxy.writeQuery({ query: FETCH_POST_QUERY, data })
+            proxy.writeQuery({ query: FETCH_POSTS_QUERY, data })
             values.body = ""
         }
     })

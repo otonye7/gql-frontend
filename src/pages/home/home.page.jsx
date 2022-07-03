@@ -3,11 +3,11 @@ import React, { useContext } from "react";
 import { AuthContext } from "../../component/context/auth";
 import CreateProduct from "../../component/create-product/createproduct.component";
 import PostCard from "../../component/postcard/postcard.component";
-import { FETCH_POST_QUERY } from "../../utils/graphql";
+import { FETCH_POSTS_QUERY } from "../../utils/graphql";
 
 const Home = () => {
     const { user } = useContext(AuthContext);
-    const { loading, data } = useQuery(FETCH_POST_QUERY)
+    const { loading, data } = useQuery(FETCH_POSTS_QUERY)
 
     return(
         <>
