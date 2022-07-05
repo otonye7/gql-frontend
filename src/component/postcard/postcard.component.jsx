@@ -8,16 +8,10 @@ import moment from 'moment';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../context/auth';
 import LikeButton from '../likebutton/likebutton.component';
+import DeleteButton from '../deletebutton/deletebutton.component';
 
 const CardComponent = ({ post : { body, id, username, createdAt, likes } }) => {
   const { user } = useContext(AuthContext);
-
-  function commentOnPost(){
-      console.log("comment on post")
-  }
-  function deletePost(id){
-    console.log("Post has been deleted")
-  }
 
   const history = useNavigate()
 
@@ -49,7 +43,7 @@ const CardComponent = ({ post : { body, id, username, createdAt, likes } }) => {
         <LikeButton id={id} likes={likes} user={user} />
         <button onClick={() => handleSinglePage(id)}>Comment On Post</button>
         {user && user.username === username && (
-          <button onClick={() => deletePost()}>Delete Post</button>
+          <DeleteButton postId={id} />
         )}
       </CardActions>
     </Card>

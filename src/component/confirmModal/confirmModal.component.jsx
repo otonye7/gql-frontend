@@ -16,7 +16,7 @@ const style = {
   p: 4,
 };
 
-const ConfirmModal = () => {
+const ConfirmModal = ({ deletePost }) => {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -35,7 +35,7 @@ const ConfirmModal = () => {
            Are you sure you want to deletePost
           </Typography>
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            <button>Yes</button>
+            <button onClick={deletePost}>Yes</button>
             <button>No</button>
           </Typography>
         </Box>
